@@ -23,4 +23,5 @@ from bswing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('safe-spaces', views.space),
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

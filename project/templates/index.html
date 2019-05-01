@@ -1,72 +1,5 @@
-
-
-
-
-
-
-
-
-
-
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brighthelm Swing Dance</title>
-  <!-- Bootstrap CSS -->
-  <link href="{% static "css/bootstrap-grid.min.css" %}" rel="stylesheet" />
-  <link href="{% static "css/bootstrap-reboot.min.css" %}" rel="stylesheet" />
-  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:200" rel="stylesheet">
-
-  <!-- Own CSS -->
-  <link href="{% static "css/main.css" %}" rel="stylesheet" />
-  <link href="{% static "css/menu.css" %}" rel="stylesheet" />
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-swing navbar-dark navbar-expand-md">
-    <div class="navbar-swing__container">
-      <a class="navbar-brand menu-logo__container" href="#">
-          <img class="menu-logo" src="{% static "img/bswing.png" %}" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#event">Events</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#location">Location</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#collegiate">Collegiate shag</a>
-              </li>
-		<li class="nav-item">
-                  <a class="nav-link" href="#workshops">Workshops</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="safe-spaces.html">Safe spaces</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#contact">Contact us</a>
-              </li>
-          </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="swing-container">
+{% extends "base.html" %}
+{% block content %}
     <!-- Hero Block -->
     <section id="home" class="swing-hero text-center col-sm-12">
       <h1 class="swing-hero__text header">
@@ -184,7 +117,7 @@ Excellent spacious wooden dance floor<br/>
         </div>
         <div class="col-12 col-md-4 swing-collegiate__column">
           <h3 class="header">Safe Spaces</h3>
-          <small><a href="safe-spaces.html">CLICK TO READ</a></small>
+          <small><a href="safe-spaces">CLICK TO READ</a></small>
         </div>
       </div>
     </section>
@@ -202,31 +135,4 @@ Excellent spacious wooden dance floor<br/>
         <li class="swing-contact__list__item"><a href="mailto:brighthelmswing@gmail.com"><i class="fa fa-envelope"></i> Email</a></li>
       </ul>
     </section>
-  </div>
-
-
-  <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- Own JS -->
-  <script src="js/menu.js"></script>
-  <script>
-    $(document).ready(function(){
-      $("a").on('click', function(event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function () {
-            window.location.hash = hash;
-          });
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+{% endblock %}
